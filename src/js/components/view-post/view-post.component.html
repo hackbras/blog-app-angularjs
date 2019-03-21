@@ -1,0 +1,19 @@
+<h2>
+    {{$ctrl.post.title}}
+</h2>
+
+<h6>
+    Author: {{$ctrl.post.author.firstName}} {{$ctrl.post.author.lastName}}
+</h6>
+
+<img src="{{$ctrl.post.id | postPhotoUrl}}" alt="">
+
+<p>
+    {{$ctrl.post.text}}
+</p>
+
+<create-comment post-id="{{$ctrl.post.id}}" comment-sent="$ctrl.comment-sent()"></create-comment>
+
+<div ng-repeat="comment in $ctrl.post._comments">
+    <view-comment comment="comment"></view-comment>
+</div>

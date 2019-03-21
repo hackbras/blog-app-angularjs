@@ -1,0 +1,36 @@
+<form action="">
+
+    <!-- título -->
+    <div class="form-group">
+        <label for="">Title</label>
+        <input ng-model="$ctrl.post.title" type="text" class="form-control">
+    </div>
+
+    <!-- autor -->
+    <div class="form-group">
+        <label for="">Author</label>
+        <select ng-model="$ctrl.post.authorId" name="" id="" class="form-control">
+            <option ng-repeat="author in $ctrl.authors" 
+                value="{{author.id}}">
+                {{author.firstName}} {{author.lastName}}                
+            </option>
+        </select>
+    </div>
+
+    <!-- texto -->
+    <div class="form-group">
+        <label for="">Text</label>
+        <textarea ng-model="$ctrl.post.text" name="" id="" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+
+    <!-- foto -->
+    <div class="form-group">
+        <label for="">Photo</label>
+        <input type="file" class="form-control" 
+            nv-file-select uploader="$ctrl.uploader" >
+    </div>
+
+    <!-- botões -->
+
+    <button ng-click="$ctrl.save()" class="btn btn-primary">Save</button>
+</form>

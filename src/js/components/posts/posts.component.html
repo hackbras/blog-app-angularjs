@@ -1,0 +1,10 @@
+<a href="#!/create-post">Create post</a>
+
+<ul>
+    <li ng-repeat="post in $ctrl.posts">
+        <a ng-href="#!/view-post?postId={{post.id}}">
+            {{post.title}}
+        </a>
+    </li>
+</ul>
+
